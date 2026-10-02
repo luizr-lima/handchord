@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — HandChord</title>
+  <meta name="description" content="Acesse sua conta HandChord e continue suas performances.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="HandChord, página inicial">
+        <span class="logo-mark" aria-hidden="true">🎵</span>
+        HandChord
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+      <label for="nav-toggle" class="nav-backdrop" aria-hidden="true"></label>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como funciona</a></li>
+          <li><a href="cadastro.html" class="btn btn-primary btn-sm">Cadastre-se</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="container">
+      <section class="auth-card">
+        <div class="auth-badge" aria-hidden="true">🎵</div>
+        <h1 class="center">Entrar no HandChord</h1>
+        <p class="center">Acesse sua área pessoal e continue suas performances.</p>
+
+        <form class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="login-id">Usuário ou e-mail</label>
+            <input type="text" id="login-id" name="identifier" autocomplete="username" required placeholder="seu@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" name="senha" autocomplete="current-password" required placeholder="Sua senha">
+          </div>
+
+          <div class="form-row space-between">
+            <label class="checkbox-inline"><input type="checkbox" name="lembrar"> Lembrar de mim</label>
+            <a href="#" class="link-muted">Esqueceu a senha?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+
+        <p class="auth-switch center">Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 HandChord — S.D.G.</p>
+    </div>
+  </footer>
+</body>
+</html>

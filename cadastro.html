@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro — HandChord</title>
+  <meta name="description" content="Crie sua conta gratuita no HandChord e comece a compor com as mãos.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="HandChord, página inicial">
+        <span class="logo-mark" aria-hidden="true">🎵</span>
+        HandChord
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como funciona</a></li>
+          <li><a href="login.html" class="btn btn-primary btn-sm">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="auth-main">
+    <div class="container">
+      <section class="auth-card">
+        <div class="auth-badge" aria-hidden="true">🎵</div>
+        <h1 class="center">Crie sua conta aqui</h1>
+        <p class="center">Leva menos de um minuto para começar a compor.</p>
+
+        <form class="auth-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cad-nome">Nome completo</label>
+              <input type="text" id="cad-nome" name="nome" autocomplete="name" required placeholder="Seu nome completo">
+            </div>
+            <div class="form-group">
+              <label for="cad-usuario">Nome de usuário</label>
+              <input type="text" id="cad-usuario" name="usuario" autocomplete="username" required placeholder="Ex.: joao123">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" name="email" autocomplete="email" required placeholder="seu@email.com">
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cad-senha">Senha</label>
+              <input type="password" id="cad-senha" name="senha" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres">
+            </div>
+            <div class="form-group">
+              <label for="cad-confirma">Confirmar senha</label>
+              <input type="password" id="cad-confirma" name="confirma_senha" autocomplete="new-password" required minlength="8" placeholder="Repita a senha">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
+        </form>
+
+        <p class="auth-switch center">Já tem uma conta? <a href="login.html">Entrar</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 HandChord — S.D.G.</p>
+    </div>
+  </footer>
+</body>
+</html>

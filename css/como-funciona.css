@@ -1,0 +1,9 @@
+/* =====================================================
+   HandChord — Como funciona (como-funciona.html)
+   ===================================================== */
+
+.page-hero { padding-block: var(--space-5) var(--space-4); max-width: 46rem; margin-inline: auto; text-align: center; }
+.page-hero p { margin-inline: auto; }
+
+/* O hero já tem respiro embaixo; evita somar dois paddings entre o título e os cartões */
+.page-hero + .section { padding-top: 0; }
