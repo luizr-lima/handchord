@@ -1,9 +1,10 @@
 /* =====================================================
    HandChord — Home (index.html)
-   Tela de entrada única: título, chamada e três ações.
+   Abertura (título, chamada e um botão) seguida de uma
+   seção com os três destaques do produto.
    ===================================================== */
 
-/* A altura mínima vem do body (flex em coluna, ver style.css) */
+/* --- Abertura --- */
 .home-hero {
   position: relative;
   overflow: hidden;
@@ -11,14 +12,18 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-block: var(--space-5);
+  min-height: 26rem;
+  min-height: min(34rem, calc(100vh - var(--header-height)));
+  min-height: min(34rem, calc(100dvh - var(--header-height)));
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
   background:
     radial-gradient(ellipse at 50% 35%, rgba(139, 92, 246, 0.10), transparent 60%),
     radial-gradient(circle at 20% 25%, rgba(139, 92, 246, 0.14), transparent 45%),
     radial-gradient(circle at 80% 75%, rgba(34, 211, 238, 0.12), transparent 45%);
 }
 
-/* Reinicia fonte, peso e margens: o wrapper pode ser <div> ou um título (h5) sem mudar o visual */
+/* Reinicia fonte e margens: o wrapper pode ser <div> ou um título sem mudar o visual */
 .home-hero-inner {
   position: relative;
   z-index: 1;
@@ -33,9 +38,10 @@
 /* --- Título com o gradiente da marca --- */
 .home-title {
   max-width: none;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   font-family: var(--font-heading);
   font-weight: 700;
+  font-size: 2rem;
   font-size: clamp(2rem, 1.2rem + 4.4vw, 3.4rem);
   line-height: 1.12;
   letter-spacing: 0.02em;
@@ -43,6 +49,7 @@
   text-wrap: balance;
   color: var(--color-text); /* fallback: navegador sem background-clip: text */
 }
+
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .home-title {
     background: var(--gradient-title);
@@ -54,17 +61,32 @@
   }
 }
 
-/* Chamada opcional logo abaixo do título */
-.home-tagline { font-size: 1.2rem; font-weight: 400; color: var(--color-text); margin-inline: auto; margin-bottom: var(--space-4); }
-.home-title:has(+ .home-tagline) { margin-bottom: var(--space-1); }
+.home-tagline {
+  max-width: 34rem;
+  margin: 0 auto var(--space-3);
+  font-size: 1.05rem;
+}
 
-/* Botões mais estreitos que o título, para dar hierarquia */
-.home-actions { display: flex; flex-direction: column; gap: var(--space-2); max-width: 22rem; margin-inline: auto; }
+/* Único botão da Home */
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.home-actions .btn {
+  min-height: 52px;
+  padding: 1rem 1.6rem;
+  font-size: 1.05rem;
+}
 
 /* --- Entrada suave do conteúdo --- */
-.home-title, .home-tagline, .home-actions {
-  animation: home-rise 0.7s ease both;
-}
+.home-title,
+.home-tagline,
+.home-actions { animation: home-rise 0.7s ease both; }
+
 .home-title { animation-delay: 0.05s; }
 .home-tagline { animation-delay: 0.15s; }
 .home-actions { animation-delay: 0.25s; }
@@ -74,10 +96,68 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 560px) {
-  .home-hero { padding-block: var(--space-4); }
+/* --- Destaques: 1 coluna no celular e no tablet, 3 no computador --- */
+.home-features .section-head p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.feature-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+@media (min-width: 600px) {
+  .home-hero {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+
+  .home-tagline { font-size: 1.15rem; }
+
+  .home-features-grid { gap: var(--space-3); }
+}
+
+@media (min-width: 861px) {
+  .home-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-title, .home-tagline, .home-actions { animation: none; opacity: 1; transform: none; }
+  .home-title,
+  .home-tagline,
+  .home-actions {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -1,85 +1,88 @@
-# HandChord
+# 🎵 HandChord
 
-Aplicativo web que reconhece gestos das mãos pela câmera do computador e os transforma em acordes musicais, com cadastro de usuário e área pessoal para gerenciar performances.
+> Transforme gestos em música: o HandChord reconhece os gestos das suas mãos pela câmera e toca um acorde para cada um, direto do navegador.
 
-Projeto acadêmico da disciplina **Web Front-End** — Turma AS62F 2026_02.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-663399?logo=css&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
 
-## Status atual
+---
+## Sumário
 
-Este repositório cobre as etapas **1 a 4** do cronograma do projeto:
+- [🎵 HandChord](#-handchord)
+  - [Sumário](#sumário)
+  - [Sobre o projeto](#sobre-o-projeto)
+    - [O que o projeto faz](#o-que-o-projeto-faz)
+  - [Tecnologias](#tecnologias)
+  - [Como executar](#como-executar)
+  - [Integrantes](#integrantes)
+  - [Contexto acadêmico](#contexto-acadêmico)
+  - [Licença](#licença)
 
-| Etapa | Descrição | Status |
-|---|---|---|
-| 1 | Planejamento, identidade visual e estrutura HTML | ✅ |
-| 2 | Desenvolvimento da Home e navegação | ✅ |
-| 3 | Desenvolvimento das páginas de cadastro e login | ✅ |
-| 4 | Desenvolvimento do CSS e responsividade | ✅ |
-| 5 | JavaScript e Local Storage | ⏳ próxima etapa |
-| 6 | Performances e recursos de áudio/câmera | ⏳ |
-| 7 | Testes, GitHub Pages e documentação | ⏳ |
+---
 
-Por isso `js/` está vazia e as páginas `performance.html`, `performances.html` e `admin.html` ainda não existem — pertencem às etapas 5 e 6.
+## Sobre o projeto
 
-## Como visualizar
+O **HandChord** é um aplicativo web que usa a câmera do computador para reconhecer gestos das mãos e transformá-los em acordes musicais. A pessoa forma um gesto, o sistema identifica a combinação de dedos e o acorde correspondente é tocado na hora. Também é possível gravar a performance e revê-la depois em uma área pessoal.
 
-Não há dependências. Basta abrir `index.html` no navegador, ou usar a extensão **Live Server** do VS Code para navegar entre as páginas com os links funcionando normalmente.
+**Ideia central:** a mão é o instrumento. Não há nada para instalar, nem instrumento físico para comprar: basta um navegador e uma câmera.
 
-## Estrutura das páginas
+### O que o projeto faz
 
-- **Home (`index.html`)** — tela de entrada única, sem menu: título, chamada e três ações diretas (Começar agora, Como funciona?, Já tenho uma conta). Tem um anel sonoro animado em SVG atrás do texto.
-- **Como Funciona (`como-funciona.html`)** — os 6 passos do processo, do acesso à câmera até a gravação da performance.
-- **Login (`login.html`)** e **Cadastro (`cadastro.html`)** — formulários de autenticação.
+1. **Acesso à câmera** — o navegador pede permissão e o reconhecimento acontece no próprio dispositivo, sem enviar vídeo para servidores externos.
+2. **Reconhecimento do gesto** — os pontos de referência dos dedos são identificados e cada combinação de dedos representa um acorde diferente.
+3. **Som imediato** — o acorde identificado é tocado pelo navegador e aparece destacado na tela.
+4. **Gravação** — áudio e vídeo da performance são gravados em tempo real.
+5. **Área pessoal** — a pessoa reproduz, baixa ou exclui as gravações salvas.
 
-O cabeçalho com menu (Início, Como funciona e um botão de ação) aparece em todas as páginas **exceto a Home**, que funciona como uma tela de abertura mais limpa — decisão intencional para reforçar o primeiro contato com a marca.
+---
 
-## Identidade visual
+## Tecnologias
 
-**Conceito:** paleta escura com três cores de destaque (violeta, ciano e coral), como se cada uma fosse a "luz" de um gesto diferente. Na Home, essa ideia aparece no anel sonoro em SVG que pulsa atrás do título, representando o som saindo do gesto.
+- **HTML5** semântico (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- **CSS3** com variáveis (custom properties), Flexbox, Grid e media queries (layout responsivo)
+- **SVG** para ilustrações e ícones
+- **Google Fonts** (Poppins e Roboto)
+- **JavaScript** e **Local Storage**
 
-**Cores:**
-| Uso | Cor | Hex |
-|---|---|---|
-| Fundo principal | Ink | `#0B0D17` |
-| Fundo de seção alternada | Ink 2 | `#14172A` |
-| Cartões e elementos elevados | Ink 3 | `#1D2138` |
-| Texto principal | Off-white | `#EEF0FA` |
-| Texto secundário | Cinza-azulado | `#9CA1BE` |
-| Destaque 1 (ações principais) | Violeta | `#8B5CF6` |
-| Destaque 2 (tecnologia/links) | Ciano | `#22D3EE` |
-| Destaque 3 (variação/energia) | Coral | `#FB7185` |
+Não há dependências nem etapa de build.
 
-**Fontes:** carregadas via Google Fonts em todas as páginas.
-- **Poppins** (peso 500–700) para títulos.
-- **Roboto** (peso 400–500) para textos e formulários.
+---
 
-## Estrutura de pastas
+## Como executar
 
-```
-handchord/
-├── index.html
-├── login.html
-├── cadastro.html
-├── como-funciona.html
-├── css/
-│   ├── style.css        → tokens, reset, header, footer, cartões e formulário (compartilhado)
-│   ├── home.css          → hero, anel em SVG e animações da Home
-│   ├── login.css         → ajustes específicos do login
-│   ├── cadastro.css      → ajustes específicos do cadastro
-│   └── como-funciona.css → ajustes específicos da página Como Funciona
-├── js/                   → reservado para a etapa 5
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── audio/
-├── LICENSE               → MIT
-└── README.md
+**Opção 1 — direto no navegador:** baixe o repositório e abra o `index.html`.
+
+**Opção 2 — GitHub Pages (site):** `https://luizr-lima.github.io/handchord`
+
+**Opção 3 — Live Server (recomendada):**
+
+```bash
+git clone [https://github.com/luizr-lima/handchord.git]
+cd handchord
 ```
 
-Os estilos compartilhados (variáveis de cor, tipografia, cabeçalho, rodapé, cartões e componentes de formulário) ficam centralizados em `style.css`. Cada página só sobrescreve o que é específico dela.
+Abra a pasta no VS Code e clique em **Go Live** (extensão *Live Server*). Assim os links entre as páginas funcionam como no site publicado.
 
-## Ajustes feitos nesta revisão
+---
 
-- A Home tinha um botão de menu (☰) sem nenhum menu para abrir, sobrando de uma versão anterior — removido, já que a Home não usa cabeçalho com navegação.
-- O título "HandChord" da Home tinha sido removido durante edições manuais, deixando a página sem nenhum `<h1>` — restaurado como o único título da página (boa prática de acessibilidade/SEO: uma página, um `<h1>`).
-- O menu das páginas internas estava inconsistente: `login.html` usava "Home" enquanto `cadastro.html` e `como-funciona.html` usavam "Início", e só uma das três tinha um botão de ação no menu. Agora as três seguem o mesmo padrão: **Início**, **Como funciona** e um botão contextual (`Cadastre-se` no login, `Entrar` no cadastro e em Como Funciona).
-- Adicionado um leve brilho no hover do botão principal, usado em todas as páginas.
+## Integrantes
+
+Luiz Ricardo Lima |[`@luizr-lima`](#https://github.com/luizr-lima)
+
+Marco Antonio Teodoro da Silva | [`@usuario`](#https://github.com/)
+
+Vinicius Fernandes | [`@usuario`](#https://github.com/)
+
+---
+
+## Contexto acadêmico
+
+Projeto desenvolvido na disciplina **Web Front-End** — Turma **AS62F 2026_02**.
+Professor: Gabriel Canhadas Genvigir | [`@gabrielcanhadas`](#https://github.com/gabrielcanhadas)
+
+---
+
+## Licença
+
+Distribuído sob a licença **MIT**. Veja o arquivo [`LICENSE`](LICENSE) para mais detalhes.

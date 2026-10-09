@@ -2,9 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0B0D17">
   <title>Cadastro — HandChord</title>
   <meta name="description" content="Crie sua conta gratuita no HandChord e comece a compor com as mãos.">
+
+  <!-- Ícone da aba: SVG nos navegadores modernos, PNG nos antigos e no iPhone/iPad -->
+  <link rel="icon" type="image/svg+xml" href="icones/icone.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="icones/png/favicon-32.png">
+  <link rel="apple-touch-icon" href="icones/png/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +18,33 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cadastro.css">
+  <script src="js/menu.js" defer></script>
+  <script src="js/cadastro.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="HandChord, página inicial">
-        <span class="logo-mark" aria-hidden="true">🎵</span>
-        HandChord
+      <a href="index.html" class="logo">
+        <picture>
+          <source type="image/svg+xml" srcset="icones/icone.svg">
+          <img class="logo-icon" src="icones/png/icone.png" alt="" width="48" height="40">
+        </picture>
+        <picture>
+          <source type="image/svg+xml" srcset="icones/nome.svg">
+          <img class="logo-name" src="icones/png/nome.png" alt="HandChord, página inicial" width="126" height="24">
+        </picture>
       </a>
 
-      <nav class="main-nav" aria-label="Navegação principal">
+      <!-- Menu do celular: o checkbox é focável pelo teclado e funciona sem JavaScript -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu de navegação" aria-controls="menu-principal">
+      <label for="nav-toggle" class="nav-backdrop" aria-hidden="true"></label>
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="como-funciona.html">Como funciona</a></li>
@@ -31,14 +54,22 @@
     </div>
   </header>
 
-  <main id="conteudo" class="auth-main">
+  <main id="conteudo" tabindex="-1" class="auth-main">
     <div class="container">
-      <section class="auth-card">
-        <div class="auth-badge" aria-hidden="true">🎵</div>
-        <h1 class="center">Crie sua conta aqui</h1>
+      <section class="auth-card" aria-labelledby="cadastro-titulo">
+        <div class="auth-badge" aria-hidden="true">
+          <picture>
+            <source type="image/svg+xml" srcset="icones/icone.svg">
+            <img src="icones/png/icone.png" alt="" width="67" height="56">
+          </picture>
+        </div>
+        <h1 id="cadastro-titulo" class="center">Crie sua conta aqui</h1>
         <p class="center">Leva menos de um minuto para começar a compor.</p>
 
-        <form class="auth-form" novalidate>
+        <!-- action="login.html": mesmo sem JavaScript o envio leva para o login. Com JavaScript, js/cadastro.js confere as senhas antes. -->
+        <form class="auth-form" id="form-cadastro" action="login.html">
+          <p class="form-note">Todos os campos são obrigatórios.</p>
+
           <div class="form-grid">
             <div class="form-group">
               <label for="cad-nome">Nome completo</label>
@@ -46,25 +77,28 @@
             </div>
             <div class="form-group">
               <label for="cad-usuario">Nome de usuário</label>
-              <input type="text" id="cad-usuario" name="usuario" autocomplete="username" required placeholder="Ex.: joao123">
+              <input type="text" id="cad-usuario" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required placeholder="Ex.: joao123">
             </div>
           </div>
 
           <div class="form-group">
             <label for="cad-email">E-mail</label>
-            <input type="email" id="cad-email" name="email" autocomplete="email" required placeholder="seu@email.com">
+            <input type="email" id="cad-email" name="email" autocomplete="email" autocapitalize="none" spellcheck="false" required placeholder="seu@email.com">
           </div>
 
+          <!-- Os campos de senha ficam sem o atributo name de propósito: assim a senha nunca vai para a barra de endereço no envio sem JavaScript -->
           <div class="form-grid">
             <div class="form-group">
               <label for="cad-senha">Senha</label>
-              <input type="password" id="cad-senha" name="senha" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres">
+              <input type="password" id="cad-senha" autocomplete="new-password" required minlength="8" aria-describedby="cad-senha-ajuda" placeholder="Mínimo 8 caracteres">
+              <small id="cad-senha-ajuda" class="form-hint">Use pelo menos 8 caracteres.</small>
             </div>
             <div class="form-group">
               <label for="cad-confirma">Confirmar senha</label>
-              <input type="password" id="cad-confirma" name="confirma_senha" autocomplete="new-password" required minlength="8" placeholder="Repita a senha">
+              <input type="password" id="cad-confirma" autocomplete="new-password" required minlength="8" placeholder="Repita a senha">
             </div>
           </div>
+
           <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
         </form>
 

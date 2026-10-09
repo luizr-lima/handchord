@@ -2,9 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0B0D17">
   <title>HandChord — transforme gestos em música</title>
   <meta name="description" content="HandChord reconhece gestos das mãos pela câmera e transforma cada gesto em um acorde musical, direto do navegador.">
+
+  <!-- Ícone da aba: SVG nos navegadores modernos, PNG nos antigos e no iPhone/iPad -->
+  <link rel="icon" type="image/svg+xml" href="icones/icone.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="icones/png/favicon-32.png">
+  <link rel="apple-touch-icon" href="icones/png/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,32 +18,118 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
+  <script src="js/menu.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="HandChord, página inicial">
-        <span class="logo-mark" aria-hidden="true">🎵</span>
-        HandChord
+      <a href="index.html" class="logo">
+        <picture>
+          <source type="image/svg+xml" srcset="icones/icone.svg">
+          <img class="logo-icon" src="icones/png/icone.png" alt="" width="48" height="40">
+        </picture>
+        <picture>
+          <source type="image/svg+xml" srcset="icones/nome.svg">
+          <img class="logo-name" src="icones/png/nome.png" alt="HandChord, página inicial" width="126" height="24">
+        </picture>
       </a>
+
+      <!-- Menu do celular: o checkbox é focável pelo teclado e funciona sem JavaScript -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu de navegação" aria-controls="menu-principal">
+      <label for="nav-toggle" class="nav-backdrop" aria-hidden="true"></label>
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="como-funciona.html">Como funciona</a></li>
+          <li><a href="login.html" class="btn btn-primary btn-sm">Entrar</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main id="conteudo" class="home-hero">
-    <h5 class="container home-hero-inner">
-      <p class="home-title">Transforme gestos em música</p>
+  <main id="conteudo" tabindex="-1">
+    <section class="home-hero" aria-labelledby="home-titulo">
+      <div class="container home-hero-inner">
+        <h1 id="home-titulo" class="home-title">Transforme gestos em música</h1>
+        <p class="home-tagline">Mostre a mão para a câmera, forme um gesto e ouça o acorde na hora, direto no navegador e sem instalar nada.</p>
 
-      <div class="home-actions">
-        <a href="cadastro.html" class="btn btn-primary btn-block">Começar agora</a>
-        <a href="login.html" class="btn btn-outline btn-block">Já tenho uma conta</a>
-        <a href="como-funciona.html" class="btn btn-outline btn-block">Como funciona?</a>
+        <div class="home-actions">
+          <a href="cadastro.html" class="btn btn-primary btn-block">Começar agora</a>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="section section-alt home-features" aria-labelledby="destaques-titulo">
+      <div class="container">
+        <div class="section-head center">
+          <h2 id="destaques-titulo">Sua mão é o instrumento</h2>
+          <p>Do gesto ao som, o HandChord faz o caminho inteiro por você.</p>
+        </div>
+
+        <div class="home-features-grid">
+          <article class="card feature-card">
+            <picture>
+              <source type="image/svg+xml" srcset="assets/images/gesto-mao.svg">
+              <img class="feature-img" src="assets/images/gesto-mao.png" alt="Mão com pontos de rastreamento sobre os dedos, dentro do enquadramento da câmera" width="320" height="180" loading="lazy">
+            </picture>
+            <h3 class="feature-title">
+              <picture>
+              <source type="image/svg+xml" srcset="assets/icons/mao.svg">
+              <img class="feature-icon" src="assets/icons/mao.png" alt="" width="28" height="28">
+            </picture>
+              Mostre o gesto
+            </h3>
+            <p>A câmera encontra os pontos dos seus dedos e entende a posição da mão. O reconhecimento acontece no seu próprio dispositivo.</p>
+          </article>
+
+          <article class="card feature-card accent-cyan">
+            <picture>
+              <source type="image/svg+xml" srcset="assets/images/acorde-teclas.svg">
+              <img class="feature-img" src="assets/images/acorde-teclas.png" alt="Teclas de piano com três notas de um acorde acesas" width="320" height="180" loading="lazy">
+            </picture>
+            <h3 class="feature-title">
+              <picture>
+              <source type="image/svg+xml" srcset="assets/icons/acorde.svg">
+              <img class="feature-icon" src="assets/icons/acorde.png" alt="" width="28" height="28">
+            </picture>
+              Ouça o acorde
+            </h3>
+            <p>Cada combinação de dedos vira um acorde diferente, tocado na hora pelo navegador.</p>
+          </article>
+
+          <article class="card feature-card accent-coral">
+            <picture>
+              <source type="image/svg+xml" srcset="assets/images/gravacao.svg">
+              <img class="feature-img" src="assets/images/gravacao.png" alt="Gravação de áudio em andamento, com forma de onda e botão de gravar" width="320" height="180" loading="lazy">
+            </picture>
+            <h3 class="feature-title">
+              <picture>
+              <source type="image/svg+xml" srcset="assets/icons/gravar.svg">
+              <img class="feature-icon" src="assets/icons/gravar.png" alt="" width="28" height="28">
+            </picture>
+              Grave sua performance
+            </h3>
+            <p>Registre áudio e vídeo da sua composição e reveja tudo quando quiser, na área Minhas performances.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-copy">© 2026 HandChord — S.D.G.</p>
+      <nav aria-label="Links do rodapé">
+        <ul>
+          <li><a href="https://github.com/luizr-lima" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (abre em nova aba)</span></a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
 </body>

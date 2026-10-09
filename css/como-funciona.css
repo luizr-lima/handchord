@@ -2,8 +2,25 @@
    HandChord — Como funciona (como-funciona.html)
    ===================================================== */
 
-.page-hero { padding-block: var(--space-5) var(--space-4); max-width: 46rem; margin-inline: auto; text-align: center; }
-.page-hero p { margin-inline: auto; }
+.page-hero {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-3);
+  text-align: center;
+}
+
+.page-hero p {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* O hero já tem respiro embaixo; evita somar dois paddings entre o título e os cartões */
 .page-hero + .section { padding-top: 0; }
+
+@media (min-width: 861px) {
+  .page-hero {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-4);
+  }
+}

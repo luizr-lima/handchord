@@ -1,0 +1,43 @@
+<svg width="320" height="180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="t"><title id="t">Gravação de áudio com forma de onda e botão de gravar</title>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#34202F"/><stop offset="1" stop-color="#0B0D17"/></radialGradient>
+    <linearGradient id="p" x1="0" x2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+  </defs>
+  <rect width="320" height="180" rx="14" fill="url(#g)"/>
+  <rect x=".75" y=".75" width="318.5" height="178.5" rx="13.5" fill="none" stroke="#2A2F4A" stroke-width="1.5"/>
+  <circle cx="34" cy="30" r="6" fill="#FB7185"/>
+  <text x="46" y="35" fill="#EEF0FA" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">REC</text>
+  <text x="290" y="35" text-anchor="end" fill="#9CA1BE" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="14">00:42</text>
+  <rect x="30" y="93.0" width="5" height="14.0" rx="2.5" fill="url(#p)"/>
+  <rect x="39" y="82.8" width="5" height="34.4" rx="2.5" fill="url(#p)"/>
+  <rect x="48" y="75.2" width="5" height="49.5" rx="2.5" fill="url(#p)"/>
+  <rect x="57" y="73.2" width="5" height="53.7" rx="2.5" fill="url(#p)"/>
+  <rect x="66" y="77.2" width="5" height="45.5" rx="2.5" fill="url(#p)"/>
+  <rect x="75" y="86.0" width="5" height="28.1" rx="2.5" fill="url(#p)"/>
+  <rect x="84" y="90.3" width="5" height="19.4" rx="2.5" fill="url(#p)"/>
+  <rect x="93" y="82.8" width="5" height="34.3" rx="2.5" fill="url(#p)"/>
+  <rect x="102" y="80.0" width="5" height="40.0" rx="2.5" fill="url(#p)"/>
+  <rect x="111" y="81.7" width="5" height="36.6" rx="2.5" fill="url(#p)"/>
+  <rect x="120" y="86.2" width="5" height="27.5" rx="2.5" fill="url(#p)"/>
+  <rect x="129" y="91.2" width="5" height="17.5" rx="2.5" fill="url(#p)"/>
+  <rect x="138" y="91.2" width="5" height="17.6" rx="2.5" fill="url(#p)"/>
+  <rect x="147" y="89.8" width="5" height="20.5" rx="2.5" fill="url(#p)"/>
+  <rect x="156" y="90.0" width="5" height="20.1" rx="2.5" fill="url(#p)"/>
+  <rect x="165" y="90.8" width="5" height="18.3" rx="2.5" fill="url(#p)"/>
+  <rect x="174" y="91.8" width="5" height="16.3" rx="2.5" fill="url(#p)"/>
+  <rect x="183" y="92.8" width="5" height="14.3" rx="2.5" fill="#2A2F4A"/>
+  <rect x="192" y="91.7" width="5" height="16.6" rx="2.5" fill="#2A2F4A"/>
+  <rect x="201" y="89.7" width="5" height="20.6" rx="2.5" fill="#2A2F4A"/>
+  <rect x="210" y="87.7" width="5" height="24.6" rx="2.5" fill="#2A2F4A"/>
+  <rect x="219" y="87.0" width="5" height="26.0" rx="2.5" fill="#2A2F4A"/>
+  <rect x="228" y="89.0" width="5" height="22.1" rx="2.5" fill="#2A2F4A"/>
+  <rect x="237" y="92.1" width="5" height="15.8" rx="2.5" fill="#2A2F4A"/>
+  <rect x="246" y="85.2" width="5" height="29.5" rx="2.5" fill="#2A2F4A"/>
+  <rect x="255" y="79.0" width="5" height="41.9" rx="2.5" fill="#2A2F4A"/>
+  <rect x="264" y="76.5" width="5" height="47.1" rx="2.5" fill="#2A2F4A"/>
+  <rect x="273" y="79.2" width="5" height="41.5" rx="2.5" fill="#2A2F4A"/>
+  <rect x="282" y="87.2" width="5" height="25.7" rx="2.5" fill="#2A2F4A"/>
+  <rect x="181" y="64" width="2.5" height="72" rx="1.2" fill="#FB7185"/>
+  <rect x="30" y="152" width="260" height="4" rx="2" fill="#2A2F4A"/>
+  <rect x="30" y="152" width="153" height="4" rx="2" fill="url(#p)"/>
+</svg>
